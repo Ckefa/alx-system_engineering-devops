@@ -1,4 +1,3 @@
-#!/bin/bash
-#display this script pid
+#!/usr/bin/bash
 
 echo $$
