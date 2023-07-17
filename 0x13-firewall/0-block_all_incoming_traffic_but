@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo apt inatall ufw
-sudo ufw default allow outgoing
-sudo ufw default deny incoming
-sudo ufw allow incoming ssh
-sudo ufw allow incoming https
-sudo ufw allow incoming http
+
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 22/tcp
+ufw allow 443/tcp
+ufw allow 80/tcp
