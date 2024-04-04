@@ -33,14 +33,14 @@ configure_haproxy() {
       timeout server 50000
       timeout http-request 50000
 
-  frontend FT43-tech-frontend
+  frontend http_front
       bind *:80
-      default_backend FT43-tech-servers
+      default_backend http_back
 
-  backend FT43-tech-servers-backend
+  backend http_back
       balance roundrobin
-      server 195416-web-01 54.160.120.200:80 check
-      server 195416-web-02 54.145.155.255:80 check
+      server 105621-web-01 52.91.122.173:80 check
+      server 105621-web-02 54.158.188.165:80 check
   "
 
   echo "$server_config" | sudo tee /etc/haproxy/haproxy.cfg >/dev/null

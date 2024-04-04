@@ -20,7 +20,7 @@ file { '/etc/nginx/sites-enabled/default':
                 server_name _;
                 location / {
                   add_header X-Served-By $hostname;
-                  root /var/www/html;
+                  root /app;
                   index index.html;
                 }
               }',
