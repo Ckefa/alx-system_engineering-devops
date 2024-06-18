@@ -8,14 +8,11 @@ def number_of_subscribrs(subredit):
     url = f"https://www.reddit.com/r/{subredit}/about.json"
     resp = requests.get(url=url).json()
 
-    if not resp:
-        return 0
-
-    subs = resp.get("data").get("subscribers")
-    if subs:
+    try:
+        subs = resp.get("data").get("subscribers")
         return subs
-
-    return 0
+    except Exception:
+        return 0
 
 
 if __name__ == "__main__":
