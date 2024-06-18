@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 
 import requests
@@ -18,4 +18,3 @@ def number_of_subscribrs(subredit):
 if __name__ == "__main__":
     res = number_of_subscribrs("programming")
     print(res)
-
