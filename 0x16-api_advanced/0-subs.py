@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-
+"""
+number of subs of a given reddit
+"""
 
 import requests
 
 
 def number_of_subscribrs(subredit):
-    """function to get number of subs in a subreddit"""
+    """
+    function to get number of subs in a subreddit
+    """
 
     url = f"https://www.reddit.com/r/{subredit}/about.json"
     resp = requests.get(url=url).json()
