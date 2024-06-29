@@ -8,7 +8,8 @@ server {
         proxy_pass http://localhost:5000;
         }
 
-        location /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+        location ~ ^/airbnb-dynamic/number_odd_or_even/(\d+)$ {
+	rewrite ^/airbnb-dynamic/nuber_odd_or_even/(.*)$ /number_odd_or_even/$1 break;
         proxy_pass http://localhost:5000;
         }
 
