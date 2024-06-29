@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Find the master process ID of Gunicorn
 GUNICORN_PID=$(pgrep -f 'gunicorn.*web_dynamic.2-hbnb:app')
 
@@ -8,6 +8,6 @@ if [ -z "$GUNICORN_PID" ]; then
 fi
 
 # Send the HUP signal to the master process to reload
-kill -HUP $GUNICORN_PID
+kill -HUP "$GUNICORN_PID"
 
 echo "Sent HUP signal to Gunicorn master process (PID: $GUNICORN_PID)."
