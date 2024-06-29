@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Find the master process ID of Gunicorn
-GUNICORN_PID=$(pgrep -f 'gunicorn.*web_dynamic.2-hbnb:app')
+GUNICORN_PID=$(pgrep -f 'gunicorn.*web_dynamic.2-hbnb:app'| head -n 1)
 
 if [ -z "$GUNICORN_PID" ]; then
   echo "Gunicorn process not found."
